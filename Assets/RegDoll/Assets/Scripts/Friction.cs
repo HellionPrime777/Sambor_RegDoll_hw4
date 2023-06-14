@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Friction : MonoBehaviour
 {
+    [SerializeField] private AudioSource _audio;
     [SerializeField] private PhysicMaterial _default;
     [SerializeField] private PhysicMaterial _zero;
     [SerializeField] private Collider _leftFoot;
@@ -19,5 +20,9 @@ public class Friction : MonoBehaviour
     {
        _rightFoot.material = _zero;
        _leftFoot.material = _default;
+    }
+    private void PlaySound()
+    {
+        _audio.Play();
     }
 }
